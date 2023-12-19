@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: a649c634a4d0a4d45b0bcf310babaf14
+  productGUID: 156e62af38811e84293f8188dd3e39aa
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -815,7 +815,7 @@ PlayerSettings:
   cloudProjectId: f55b9e17-100b-436f-be56-4701f4b78e51
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Reko's Nightmare
+  projectName: TopLipTriumph
   organizationId: sirtangogibus
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
