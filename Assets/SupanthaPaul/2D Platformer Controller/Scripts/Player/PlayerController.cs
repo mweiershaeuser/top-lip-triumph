@@ -1,7 +1,25 @@
 ﻿using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace SupanthaPaul
 {
+	[System.Serializable]
+    public class PlayerSaveData
+    {
+		public float speed;
+		public float jumpForce;
+		public float fallMultiplier;
+		public Transform groundCheck;
+		public float groundCheckRadius;
+		public LayerMask whatIsGround;
+		public int extraJumpCount = 1;
+		public GameObject jumpEffect;
+		public float dashSpeed = 30f;
+		public float startDashTime = 0.1f;
+		public float dashCooldown = 0.2f;
+		public GameObject dashEffect;
+		public Vector3 Position;
+    }
 	public class PlayerController : MonoBehaviour
 	{
 		[SerializeField] private float speed;
@@ -20,6 +38,7 @@ namespace SupanthaPaul
 		[Tooltip("Time (in seconds) between dashes")]
 		[SerializeField] private float dashCooldown = 0.2f;
 		[SerializeField] private GameObject dashEffect;
+		[SerializeField] private Vector3 position;
 
 		// Access needed for handling animation in Player script and other uses
 		[HideInInspector] public bool isGrounded;
@@ -61,6 +80,23 @@ namespace SupanthaPaul
 		private int m_onWallSide = 0;
 		private int m_playerSide = 1;
 
+		public void LoadFromSaveData(PlayerSaveData saveData)
+		{
+			this.speed = saveData.speed;
+			this.jumpForce = saveData.jumpForce;
+			this.fallMultiplier = saveData.fallMultiplier;
+			this.groundCheck = saveData.groundCheck; // Assuming groundCheck is a Transform
+			this.groundCheckRadius = saveData.groundCheckRadius;
+			this.whatIsGround = saveData.whatIsGround; // Assuming whatIsGround is a LayerMask
+			this.extraJumpCount = saveData.extraJumpCount;
+			this.jumpEffect = saveData.jumpEffect; // Assuming jumpEffect is a GameObject
+			this.dashSpeed = saveData.dashSpeed;
+			this.startDashTime = saveData.startDashTime;
+			this.dashCooldown = saveData.dashCooldown;
+			this.dashEffect = saveData.dashEffect; // Assuming dashEffect is a GameObject
+			this.position = saveData.Position;
+			transform.position = position;
+		}
 
 		void Start()
 		{
@@ -85,7 +121,10 @@ namespace SupanthaPaul
 		{
 			// check if grounded
 			isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
-			var position = transform.position;
+
+			// Added this to keep track for the position
+			position = transform.position;
+
 			// check if on wall
 			m_onWall = Physics2D.OverlapCircle((Vector2)position + grabRightOffset, grabCheckRadius, whatIsGround)
 			          || Physics2D.OverlapCircle((Vector2)position + grabLeftOffset, grabCheckRadius, whatIsGround);
@@ -181,6 +220,7 @@ namespace SupanthaPaul
 		{
 			// horizontal input
 			moveInput = InputSystem.HorizontalRaw();
+			this.position = transform.position;
 
 			if (isGrounded)
 			{
