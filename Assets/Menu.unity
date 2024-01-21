@@ -1898,10 +1898,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b488dd9e014404bb7240019b43c2b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 1464795505}
   MainMenu: {fileID: 1563977615}
   OptionsMenu: {fileID: 834822545}
   musicLabel: {fileID: 809763779}
   sfxLabel: {fileID: 1092220791}
+  isPauseMenu: 0
 --- !u!1 &1470657494
 GameObject:
   m_ObjectHideFlags: 0

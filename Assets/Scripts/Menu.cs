@@ -7,16 +7,33 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public Canvas canvas;
     public GameObject MainMenu;
     public GameObject OptionsMenu;
     public TextMeshProUGUI musicLabel;
     public TextMeshProUGUI sfxLabel;
+    public bool isPauseMenu;
 
     void Start()
     {
+        if (isPauseMenu)
+        {
+            canvas.enabled = false;
+        }
         ShowMainMenu();
         DisplayMusicState();
         DisplaySFXState();
+    }
+
+    void Update()
+    {
+        if (isPauseMenu)
+        {
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                canvas.enabled = !canvas.enabled;
+            }
+        }
     }
 
     public void Play()
