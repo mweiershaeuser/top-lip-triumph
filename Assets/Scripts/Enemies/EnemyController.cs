@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     private Vector3 startPosition;
     private bool movingLeft = true;
     private Animator animator;
-    private bool enemyFacingRight = true;
+    private bool enemyFacingRight = false;
 
     void Start()
     {
