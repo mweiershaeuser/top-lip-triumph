@@ -177,6 +177,8 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 01e23cf826736462f92d7a0479052a5c, type: 3}
   - name: success
     audio: {fileID: 8300000, guid: 89aa359f592e44878b08f2f2e60652ce, type: 3}
+  - name: typing
+    audio: {fileID: 8300000, guid: 41dfae4dec1de4c8a9c664cd29e4b39a, type: 3}
   musicSource: {fileID: 1995583548}
   sfxSource: {fileID: 599375269}
 --- !u!1 &26755027

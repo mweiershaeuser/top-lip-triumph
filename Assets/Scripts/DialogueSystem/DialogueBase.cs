@@ -7,7 +7,7 @@ namespace DialogueSystem
 {
     public class DialogueBase : MonoBehaviour
     {
-        protected IEnumerator WriteText(string input, TextMeshProUGUI textHolder, Color textColor, TMP_FontAsset font)
+        protected IEnumerator WriteText(string input, TextMeshProUGUI textHolder, Color textColor, TMP_FontAsset font, float delay)
         {
             textHolder.color = textColor;
             textHolder.font = font;
@@ -15,7 +15,8 @@ namespace DialogueSystem
             for (int i = 0; i < input.Length; i++)
             {
                 textHolder.text += input[i];
-                yield return new WaitForSeconds(0.1f);
+                AudioManager.global.PlaySFX("typing");
+                yield return new WaitForSeconds(delay);
             }
         }
     }

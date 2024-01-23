@@ -14,9 +14,12 @@ namespace DialogueSystem
         [SerializeField] private Color textColor;
         [SerializeField] private TMP_FontAsset font;
 
+        [Header("Time")]
+        [SerializeField] private float delay;
+
         private void Awake()
         {
-            StartCoroutine(WriteText(input, textHolder, textColor, font));
+            StartCoroutine(WriteText(input, textHolder, textColor, font, delay));
         }
     }
 }
