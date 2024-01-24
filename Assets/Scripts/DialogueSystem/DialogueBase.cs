@@ -7,6 +7,8 @@ namespace DialogueSystem
 {
     public class DialogueBase : MonoBehaviour
     {
+        public bool finished { get; private set; }
+
         protected IEnumerator WriteText(string input, TextMeshProUGUI textHolder, Color textColor, TMP_FontAsset font, float delay)
         {
             textHolder.color = textColor;
@@ -18,6 +20,8 @@ namespace DialogueSystem
                 AudioManager.global.PlaySFX("typing");
                 yield return new WaitForSeconds(delay);
             }
+
+            finished = true;
         }
     }
 }
