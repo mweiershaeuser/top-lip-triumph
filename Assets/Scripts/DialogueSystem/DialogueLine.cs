@@ -17,7 +17,7 @@ namespace DialogueSystem
         [Header("Time")]
         [SerializeField] private float delay;
 
-        private void Awake()
+        private void Start()
         {
             StartCoroutine(WriteText(input, textHolder, textColor, font, delay));
         }
