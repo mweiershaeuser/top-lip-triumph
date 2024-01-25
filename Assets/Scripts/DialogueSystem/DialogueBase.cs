@@ -9,10 +9,11 @@ namespace DialogueSystem
     {
         public bool finished { get; private set; }
 
-        protected IEnumerator WriteText(string input, TextMeshProUGUI textHolder, Color textColor, TMP_FontAsset font, float delay)
+        protected IEnumerator WriteText(string input, TextMeshProUGUI textHolder, Color textColor, TMP_FontAsset font, float fontSize, float delay)
         {
             textHolder.color = textColor;
             textHolder.font = font;
+            textHolder.fontSize = fontSize;
 
             for (int i = 0; i < input.Length; i++)
             {
