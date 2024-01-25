@@ -328,7 +328,7 @@ MonoBehaviour:
   textHolder: {fileID: 591294473}
   textColor: {r: 0, g: 0, b: 0, a: 1}
   font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  delay: 0.1
+  delay: 0.05
   sprite: {fileID: 21300000, guid: 29697c9d7181152499925f774a855363, type: 3}
   imgHolder: {fileID: 2104350365}
 --- !u!114 &591294473
@@ -483,7 +483,7 @@ MonoBehaviour:
   textHolder: {fileID: 619429672}
   textColor: {r: 0, g: 0, b: 0, a: 1}
   font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  delay: 0.1
+  delay: 0.05
   sprite: {fileID: 21300002, guid: 9168f69ea899da74296aca91e9ebafcd, type: 3}
   imgHolder: {fileID: 4287959}
 --- !u!114 &619429672
@@ -825,7 +825,7 @@ MonoBehaviour:
   textHolder: {fileID: 1032232247}
   textColor: {r: 0, g: 0, b: 0, a: 1}
   font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  delay: 0.1
+  delay: 0.05
   sprite: {fileID: 21300002, guid: 9168f69ea899da74296aca91e9ebafcd, type: 3}
   imgHolder: {fileID: 1156386845}
 --- !u!114 &1032232247
@@ -980,7 +980,7 @@ MonoBehaviour:
   textHolder: {fileID: 1126000274}
   textColor: {r: 0, g: 0, b: 0, a: 1}
   font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  delay: 0.1
+  delay: 0.05
   sprite: {fileID: 21300000, guid: 29697c9d7181152499925f774a855363, type: 3}
   imgHolder: {fileID: 1137433577}
 --- !u!114 &1126000274
@@ -1488,7 +1488,7 @@ MonoBehaviour:
   textHolder: {fileID: 1330242533}
   textColor: {r: 0, g: 0, b: 0, a: 1}
   font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  delay: 0.1
+  delay: 0.05
   sprite: {fileID: 21300000, guid: 29697c9d7181152499925f774a855363, type: 3}
   imgHolder: {fileID: 1164409491}
 --- !u!114 &1330242533
@@ -1871,7 +1871,7 @@ MonoBehaviour:
   textHolder: {fileID: 1693639041}
   textColor: {r: 0, g: 0, b: 0, a: 1}
   font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  delay: 0.1
+  delay: 0.05
   sprite: {fileID: 21300002, guid: 9168f69ea899da74296aca91e9ebafcd, type: 3}
   imgHolder: {fileID: 524433078}
 --- !u!114 &1693639041
@@ -2026,7 +2026,7 @@ MonoBehaviour:
   textHolder: {fileID: 1715115232}
   textColor: {r: 0, g: 0, b: 0, a: 1}
   font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  delay: 0.1
+  delay: 0.05
   sprite: {fileID: 21300000, guid: 29697c9d7181152499925f774a855363, type: 3}
   imgHolder: {fileID: 1868352321}
 --- !u!114 &1715115232
