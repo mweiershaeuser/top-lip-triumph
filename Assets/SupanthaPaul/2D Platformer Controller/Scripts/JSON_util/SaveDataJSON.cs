@@ -34,7 +34,6 @@ public class SaveDataJSON : MonoBehaviour
         string json = JsonUtility.ToJson(playerController);
         File.WriteAllText(savePath, json);
         Debug.Log("Game data saved");
-        Debug.Log(savePath);
     }
 
     public void LoadGame()
@@ -42,11 +41,8 @@ public class SaveDataJSON : MonoBehaviour
         if (File.Exists(savePath))
         {
             string jsonData = File.ReadAllText(savePath);
-
             PlayerSaveData data = JsonUtility.FromJson<PlayerSaveData>(jsonData);
-
             Debug.Log("Loaded game data");
-
             playerController.LoadFromSaveData(data);
         }
         else

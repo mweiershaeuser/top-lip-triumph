@@ -18,7 +18,7 @@ namespace SupanthaPaul
 		public float startDashTime = 0.1f;
 		public float dashCooldown = 0.2f;
 		public GameObject dashEffect;
-		public Vector3 Position;
+		public Vector3 position;
     }
 	public class PlayerController : MonoBehaviour
 	{
@@ -94,7 +94,7 @@ namespace SupanthaPaul
 			this.startDashTime = saveData.startDashTime;
 			this.dashCooldown = saveData.dashCooldown;
 			this.dashEffect = saveData.dashEffect; // Assuming dashEffect is a GameObject
-			this.position = saveData.Position;
+			this.position = saveData.position;
 			transform.position = position;
 		}
 
