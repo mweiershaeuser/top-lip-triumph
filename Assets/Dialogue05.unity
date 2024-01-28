@@ -174,9 +174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c12af735b704f6d845eff405317bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Mustache Maestro
+  characterName: Stan Stache
   nameHolder: {fileID: 524778177}
-  sprite: {fileID: 21300002, guid: 9168f69ea899da74296aca91e9ebafcd, type: 3}
+  sprite: {fileID: 21300000, guid: 29697c9d7181152499925f774a855363, type: 3}
   imgHolder: {fileID: 997948868}
   input: In the grandeur of the Gala Castle, the Mustache Maestro reveals himself.
   textHolder: {fileID: 1701792039}
@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 405860067}
   - component: {fileID: 405860068}
   m_Layer: 5
-  m_Name: DialogueLine04
+  m_Name: DialogueLine05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,9 +642,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c12af735b704f6d845eff405317bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Mustache Maestro
+  characterName: Stan Stache
   nameHolder: {fileID: 1121765516}
-  sprite: {fileID: 21300002, guid: 9168f69ea899da74296aca91e9ebafcd, type: 3}
+  sprite: {fileID: 21300000, guid: 29697c9d7181152499925f774a855363, type: 3}
   imgHolder: {fileID: 64729658}
   input: This mysterious figure recognizes the artistry within my mustache.
   textHolder: {fileID: 2026946121}
@@ -1964,7 +1964,7 @@ GameObject:
   - component: {fileID: 1152630956}
   - component: {fileID: 1152630957}
   m_Layer: 5
-  m_Name: DialogueLine05
+  m_Name: DialogueLine06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2004,9 +2004,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c12af735b704f6d845eff405317bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Mustache Maestro
+  characterName: Stan Stache
   nameHolder: {fileID: 1843758183}
-  sprite: {fileID: 21300002, guid: 9168f69ea899da74296aca91e9ebafcd, type: 3}
+  sprite: {fileID: 21300000, guid: 29697c9d7181152499925f774a855363, type: 3}
   imgHolder: {fileID: 971526920}
   input: My mustache, now a masterpiece, radiates with extraordinary brilliance.
   textHolder: {fileID: 357900613}
