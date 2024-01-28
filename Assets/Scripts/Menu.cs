@@ -38,7 +38,7 @@ public class Menu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Dialogue01");
     }
 
     public void Quit()
