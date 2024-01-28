@@ -38,7 +38,14 @@ public class Menu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Dialogue01");
+        if (isPauseMenu)
+        {
+            canvas.enabled = !canvas.enabled;
+        }
+        else
+        {
+            SceneManager.LoadScene("Dialogue01");
+        }
     }
 
     public void Quit()
