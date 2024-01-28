@@ -312,7 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Mustache Maestro
   nameHolder: {fileID: 443544480}
-  sprite: {fileID: 21300002, guid: 9168f69ea899da74296aca91e9ebafcd, type: 3}
+  sprite: {fileID: 21300000, guid: fcd54647ebad345f5aea786d678d936a, type: 3}
   imgHolder: {fileID: 1793487907}
   input: Your mustache, a masterpiece in itself, shall be celebrated at the Great
     Mustache Gala.
@@ -1110,7 +1110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Mustache Maestro
   nameHolder: {fileID: 1541759874}
-  sprite: {fileID: 21300002, guid: 9168f69ea899da74296aca91e9ebafcd, type: 3}
+  sprite: {fileID: 21300000, guid: fcd54647ebad345f5aea786d678d936a, type: 3}
   imgHolder: {fileID: 2144562249}
   input: Continue to express the artistry within, for you are now the true Mustache
     Maestro of Mustachia.
@@ -1675,7 +1675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Mustache Maestro
   nameHolder: {fileID: 1087472671}
-  sprite: {fileID: 21300002, guid: 9168f69ea899da74296aca91e9ebafcd, type: 3}
+  sprite: {fileID: 21300000, guid: fcd54647ebad345f5aea786d678d936a, type: 3}
   imgHolder: {fileID: 748011240}
   input: Stan Stache, you have embraced the true essence of the Mustache Arts.
   textHolder: {fileID: 2018535439}
