@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 namespace SupanthaPaul
 {
@@ -88,6 +89,13 @@ namespace SupanthaPaul
 			// If we have new level, we don't load anything
 			if (!saveData.positionIsValid){
 				Debug.Log("Position is invalid, loading nothing");
+				return;
+			}
+			if (saveData.currentLevelName != SceneManager.GetActiveScene().name)
+			{
+				Debug.Log("Level in the save is different, not loading");
+				saveData.currentLevelName = SceneManager.GetActiveScene().name;
+				SaveController.Instance.SaveGame();
 				return;
 			}
 
