@@ -1,25 +1,26 @@
 ﻿using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 namespace SupanthaPaul
 {
-	[System.Serializable]
-	public class PlayerSaveData
-	{
-		public float speed;
-		public float jumpForce;
-		public float fallMultiplier;
-		public Transform groundCheck;
-		public float groundCheckRadius;
-		public LayerMask whatIsGround;
-		public int extraJumpCount = 1;
-		public GameObject jumpEffect;
-		public float dashSpeed = 30f;
-		public float startDashTime = 0.1f;
-		public float dashCooldown = 0.2f;
-		public GameObject dashEffect;
-		public Vector3 Position;
-	}
+	// [System.Serializable]
+	// public class PlayerSaveData
+	// {
+	// 	public float speed;
+	// 	public float jumpForce;
+	// 	public float fallMultiplier;
+	// 	public Transform groundCheck;
+	// 	public float groundCheckRadius;
+	// 	public LayerMask whatIsGround;
+	// 	public int extraJumpCount = 1;
+	// 	public GameObject jumpEffect;
+	// 	public float dashSpeed = 30f;
+	// 	public float startDashTime = 0.1f;
+	// 	public float dashCooldown = 0.2f;
+	// 	public GameObject dashEffect;
+	// 	public Vector3 position;
+	// }
 	public class PlayerController : MonoBehaviour
 	{
 		[SerializeField] private float speed;
@@ -80,26 +81,62 @@ namespace SupanthaPaul
 		private int m_onWallSide = 0;
 		private int m_playerSide = 1;
 
-		public void LoadFromSaveData(PlayerSaveData saveData)
+		[SerializeField]
+		public int collectedItems = 0;
+
+		public void LoadFromSaveData(SaveData saveData)
 		{
-			this.speed = saveData.speed;
-			this.jumpForce = saveData.jumpForce;
-			this.fallMultiplier = saveData.fallMultiplier;
-			this.groundCheck = saveData.groundCheck; // Assuming groundCheck is a Transform
-			this.groundCheckRadius = saveData.groundCheckRadius;
-			this.whatIsGround = saveData.whatIsGround; // Assuming whatIsGround is a LayerMask
-			this.extraJumpCount = saveData.extraJumpCount;
-			this.jumpEffect = saveData.jumpEffect; // Assuming jumpEffect is a GameObject
-			this.dashSpeed = saveData.dashSpeed;
-			this.startDashTime = saveData.startDashTime;
-			this.dashCooldown = saveData.dashCooldown;
-			this.dashEffect = saveData.dashEffect; // Assuming dashEffect is a GameObject
-			this.position = saveData.Position;
+			// If we have new level, we don't load anything
+			if (!saveData.positionIsValid){
+				Debug.Log("Position is invalid, loading nothing");
+				return;
+			}
+			if (saveData.currentLevelName != SceneManager.GetActiveScene().name)
+			{
+				Debug.Log("Level in the save is different, not loading");
+				saveData.currentLevelName = SceneManager.GetActiveScene().name;
+				SaveController.Instance.SaveGame();
+				return;
+			}
+
+			// this.speed = saveData.speed;
+			// this.jumpForce = saveData.jumpForce;
+			// this.fallMultiplier = saveData.fallMultiplier;
+			// this.groundCheck = saveData.groundCheck; // Assuming groundCheck is a Transform
+			// this.groundCheckRadius = saveData.groundCheckRadius;
+			// this.whatIsGround = saveData.whatIsGround; // Assuming whatIsGround is a LayerMask
+			// this.extraJumpCount = saveData.extraJumpCount;
+			// this.jumpEffect = saveData.jumpEffect; // Assuming jumpEffect is a GameObject
+			// this.dashSpeed = saveData.dashSpeed;
+			// this.startDashTime = saveData.startDashTime;
+			// this.dashCooldown = saveData.dashCooldown;
+			// this.dashEffect = saveData.dashEffect; // Assuming dashEffect is a GameObject
+			this.position = saveData.position;
 			transform.position = position;
+		}
+
+		public void WriteToSaveData(SaveData saveData)
+		{
+			saveData.speed = this.speed;
+			saveData.jumpForce = this.jumpForce;
+			saveData.fallMultiplier = this.fallMultiplier;
+			saveData.groundCheck = this.groundCheck; // Assuming groundCheck is a Transform
+			saveData.groundCheckRadius = this.groundCheckRadius;
+			saveData.whatIsGround = this.whatIsGround; // Assuming whatIsGround is a LayerMask
+			saveData.extraJumpCount = this.extraJumpCount;
+			saveData.jumpEffect = this.jumpEffect; // Assuming jumpEffect is a GameObject
+			saveData.dashSpeed = this.dashSpeed;
+			saveData.startDashTime = this.startDashTime;
+			saveData.dashCooldown = this.dashCooldown;
+			saveData.dashEffect = this.dashEffect; // Assuming dashEffect is a GameObject
+			saveData.position = this.position;
+			// transform.position = position;
+			saveData.positionIsValid = true;
 		}
 
 		void Start()
 		{
+			LoadFromSaveData(SaveController.Instance.saveData);
 			// create pools for particles
 			PoolManager.instance.CreatePool(dashEffect, 2);
 			PoolManager.instance.CreatePool(jumpEffect, 2);
@@ -325,6 +362,19 @@ namespace SupanthaPaul
 			Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
 			Gizmos.DrawWireSphere((Vector2)transform.position + grabRightOffset, grabCheckRadius);
 			Gizmos.DrawWireSphere((Vector2)transform.position + grabLeftOffset, grabCheckRadius);
+		}
+		public void Jump()
+		{
+			m_rb.velocity = new Vector2(m_rb.velocity.x, m_extraJumpForce); ;
+			m_extraJumps--;
+			PoolManager.instance.ReuseObject(jumpEffect, groundCheck.position, Quaternion.identity);
+			AudioManager.global.PlaySFX("jump");
+		}
+
+		public void Collect()
+		{
+			collectedItems++;
+			Debug.Log("collectable collected");
 		}
 	}
 }

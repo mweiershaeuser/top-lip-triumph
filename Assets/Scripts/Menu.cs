@@ -23,6 +23,10 @@ public class Menu : MonoBehaviour
         ShowMainMenu();
         DisplayMusicState();
         DisplaySFXState();
+        if (!SaveController.Instance.IsLoaded())
+        {
+            SaveController.Instance.LoadGameFromFile();
+        }
     }
 
     void Update()
@@ -44,7 +48,8 @@ public class Menu : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Dialogue01");
+            // It's stupid and not SOLID, but I don't care
+            SaveController.Instance.LoadScene(SaveController.Instance.saveData.currentLevelName);
         }
     }
 
