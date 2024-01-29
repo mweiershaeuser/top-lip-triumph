@@ -8,7 +8,7 @@ public class CollectableCoin : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform respawnPoint;
-     [SerializeField]
+    [SerializeField]
     public string NextLevel;
     public string itemId;
     public string level;
@@ -52,6 +52,7 @@ public class CollectableCoin : MonoBehaviour
         if (playerController != null)
         {
             playerController.Collect();
+            AudioManager.global.PlaySFX("coin");
             // PlayerPrefs.SetInt(itemId + "_Collected", 1);
             SaveController.Instance.saveData.collectedItems.Add(level + itemId + "_Collected");
             gameObject.SetActive(false);

@@ -179,6 +179,8 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 89aa359f592e44878b08f2f2e60652ce, type: 3}
   - name: typing
     audio: {fileID: 8300000, guid: 41dfae4dec1de4c8a9c664cd29e4b39a, type: 3}
+  - name: coin
+    audio: {fileID: 8300000, guid: 0e48e3ee07a41419c965f9649ed3930d, type: 3}
   musicSource: {fileID: 1995583548}
   sfxSource: {fileID: 599375269}
 --- !u!1 &26755027
@@ -1679,7 +1681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9136b8884cf8e4542ad0c3a6c268bc11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
   saveData:
     speed: 0
     jumpForce: 0
@@ -1696,6 +1697,7 @@ MonoBehaviour:
     dashCooldown: 0.2
     dashEffect: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
+    positionIsValid: 0
     currentLevelName: Level1
     openedLevels: []
     collectedItems: []
