@@ -8,7 +8,7 @@ public class EndLevelCollectable : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform respawnPoint;
-     [SerializeField]
+    [SerializeField]
     public string NextLevel;
 
     void Start()
@@ -42,6 +42,7 @@ public class EndLevelCollectable : MonoBehaviour
         {
             // Make the player jump three times
             playerController.Jump();
+            AudioManager.global.PlaySFX("success");
             // TODO: make it wait till Jump ends, or just some fancy animation
 
             // I need it to check if it's proper level and we should reset coordinates, or smth random
