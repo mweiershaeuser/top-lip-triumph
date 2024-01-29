@@ -43431,6 +43431,8 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 89aa359f592e44878b08f2f2e60652ce, type: 3}
   - name: typing
     audio: {fileID: 8300000, guid: 41dfae4dec1de4c8a9c664cd29e4b39a, type: 3}
+  - name: coin
+    audio: {fileID: 8300000, guid: 0e48e3ee07a41419c965f9649ed3930d, type: 3}
   musicSource: {fileID: 510604158}
   sfxSource: {fileID: 1323932361}
 --- !u!4 &794264107
