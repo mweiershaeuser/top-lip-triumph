@@ -107,4 +107,9 @@ public class SaveController : MonoBehaviour
     {
         return this.loaded;
     }
+
+    public void ResetSaves()
+    {
+        File.Delete(savePath);
+    }
 }
