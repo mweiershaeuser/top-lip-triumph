@@ -2366,10 +2366,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1865938916563621657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19e7fd9c88db53c4b9a37fd829f0428d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9136b8884cf8e4542ad0c3a6c268bc11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1865938916563621658}
+  saveData:
+    speed: 0
+    jumpForce: 0
+    fallMultiplier: 0
+    groundCheck: {fileID: 0}
+    groundCheckRadius: 0
+    whatIsGround:
+      serializedVersion: 2
+      m_Bits: 0
+    extraJumpCount: 1
+    jumpEffect: {fileID: 0}
+    dashSpeed: 30
+    startDashTime: 0.1
+    dashCooldown: 0.2
+    dashEffect: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    currentLevelName: Level1
+    openedLevels: []
+    collectedItems: []
 --- !u!1001 &2644038771478693182
 PrefabInstance:
   m_ObjectHideFlags: 0

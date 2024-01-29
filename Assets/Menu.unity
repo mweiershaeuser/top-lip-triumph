@@ -1650,6 +1650,70 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1240584791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1240584793}
+  - component: {fileID: 1240584792}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1240584792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240584791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9136b8884cf8e4542ad0c3a6c268bc11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  saveData:
+    speed: 0
+    jumpForce: 0
+    fallMultiplier: 0
+    groundCheck: {fileID: 0}
+    groundCheckRadius: 0
+    whatIsGround:
+      serializedVersion: 2
+      m_Bits: 0
+    extraJumpCount: 1
+    jumpEffect: {fileID: 0}
+    dashSpeed: 30
+    startDashTime: 0.1
+    dashCooldown: 0.2
+    dashEffect: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    currentLevelName: Level1
+    openedLevels: []
+    collectedItems: []
+--- !u!4 &1240584793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240584791}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.7745075, y: 3.2336495, z: 3.0616362}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1249581208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2481,3 +2545,4 @@ SceneRoots:
   - {fileID: 1464795506}
   - {fileID: 723838168}
   - {fileID: 6717437}
+  - {fileID: 1240584793}
